@@ -1,13 +1,19 @@
 /* Variables et reset */
 :root {
-    --primary: #7289da;
+    --primary: #daa472;
     --secondary: #2c2f33;
+    --particles: #4f8f86;
     --background: #23272a;
     --text: #ffffff;
     --accent: #99aab5;
     --success: #43b581;
     --danger: #f04747;
     --warning: #faa61a;
+}
+
+@font-face {
+    font-family: 'NewYear';
+    src: url('../fonts/Newyear\ Goo.otf') format('truetype'); /* Assure-toi du bon chemin */
 }
 
 * {
@@ -39,6 +45,18 @@ body {
     background: rgba(44, 47, 51, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../background/wp8604318-anime-festival-wallpapers.jpg') no-repeat center center;
+    opacity: 0.5;
+    background-size: cover;
+    z-index: 1;
 }
 
 header {
@@ -126,21 +144,23 @@ nav {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle, var(--primary) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--particles) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: particleAnimation 20s linear infinite;
+    z-index: 2;
 }
 
 .hero-content {
     text-align: center;
-    z-index: 1;
+    z-index: 3;
     padding: 2rem;
     margin-bottom: 4rem;
 }
 
 .glitch-text {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 8rem;
+    font-weight: 300;
+    font-family: "NewYear", sans-serif;
     margin-bottom: 1rem;
     position: relative;
     text-shadow: 0 0 10px rgba(114, 137, 218, 0.5);
@@ -148,6 +168,7 @@ nav {
 
 .typing-text {
     font-size: 1.5rem;
+    font-style: italic;
     margin-bottom: 2rem;
     opacity: 0;
     animation: fadeIn 1s ease forwards 1s;

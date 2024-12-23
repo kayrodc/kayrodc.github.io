@@ -70,7 +70,7 @@ heroObserver.observe(document.querySelector('.hero'));
 
 
 const membersCount = document.querySelector('.members-count span');
-const targetCount = 300;
+const targetCount = 500;
 let currentCount = 0;
 const duration = 2000;
 const updateInterval = 25; 
